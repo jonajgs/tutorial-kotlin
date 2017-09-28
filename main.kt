@@ -1,19 +1,18 @@
 
 fun main(args:Array<String>) {
 
-    // val -> para variables inmutables
-    val pizzaPrice:Int = 4
-    // pizzaPrice = 5 // No mepermite porquees inmutable
+    // condiciones
+    var baconPrice:Int = 14
 
-    var hamburgerPrice:Int = 5
-    hamburgerPrice = 6
+    if( baconPrice > 14 ) {
+        println("No m alcanza para el tocino :(")
+    } else {
+        println("Me da el tocino, porfavor!!")
+    }
 
-    // Strings
-    //variable inferida, el compilador lo defineautomatico
-    val tocino = "Tocino"
+    // another way -> like a ternary
+    val response:String = if( baconPrice > 14 ) "No m alcanza para el tocino :(" else "Me da el tocino, porfavor!!"
 
-
-    println(tocino)
-    println("Hola mundo del $tocino")
+    println(response)
 
 }
