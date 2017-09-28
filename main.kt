@@ -2,17 +2,13 @@
 fun main(args:Array<String>) {
 
     // condiciones
-    var baconPrice:Int = 14
+    var baconPrice:Int = 15
 
-    if( baconPrice > 14 ) {
-        println("No m alcanza para el tocino :(")
-    } else {
-        println("Me da el tocino, porfavor!!")
+    when( baconPrice ) {
+
+        14 -> println("Dame todo el tocino")
+        15,16,17 -> println("Deja ir por un pesito a mi casa")
+        else -> println("Gracias")
+
     }
-
-    // another way -> like a ternary
-    val response:String = if( baconPrice > 14 ) "No m alcanza para el tocino :(" else "Me da el tocino, porfavor!!"
-
-    println(response)
-
 }
