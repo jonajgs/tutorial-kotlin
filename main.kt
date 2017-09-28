@@ -1,14 +1,23 @@
 
 fun main(args:Array<String>) {
 
-    // condiciones
-    var baconPrice:Int = 15
+    // array with multiples values of types
+    val arreglo:Array<Any> = arrayOf(1,2,3,4,5,6,7,8,9,10,"11","12","trece")
 
-    when( baconPrice ) {
+    val arregloDeInt:IntArray = intArrayOf(1, 2, 3)
 
-        14 -> println("Dame todo el tocino")
-        15,16,17 -> println("Deja ir por un pesito a mi casa")
-        else -> println("Gracias")
+    val arregloDeNulos = arrayOfNulls<String>(12) // todos son nulls
 
+    // elemento es una variable de asignacion
+    for( elemento in arreglo ) {
+        print("$elemento - ")
     }
+
+    println("")
+
+    for( indice in arreglo.indices ) {
+        print(arreglo[indice])
+        print(" - ")
+    }
+
 }
