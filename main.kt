@@ -7,7 +7,7 @@ fun main(args:Array<String>) {
     castSecure("Hola")
     castSecure(1)
 
-
+    nombreClase("Hola")
 }
 
 fun castear(obj:Any) {
@@ -21,4 +21,9 @@ fun castear(obj:Any) {
 fun castSecure(obj:Any) {
     val cadena:String? = obj as? String
     println(cadena?.length)
+}
+
+fun nombreClase(obj:Any) {
+    val className = obj::class
+    println("TU objeto es: ${className}")
 }
