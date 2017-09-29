@@ -1,16 +1,24 @@
 
 fun main(args:Array<String>) {
-    // validar si un objeto pertenece a una clase o no
-    obtenerTam("Hola")
-    obtenerTam(1)
+
+
+    //castear("Hola")
+    //castear(1)
+    castSecure("Hola")
+    castSecure(1)
+
+
 }
 
-fun obtenerTam(obj:Any) {
+fun castear(obj:Any) {
 
-    if( obj is String ) {
-        println(obj.length)
-    } else {
-        println("No es una cadena")
-    }
+    // peligroso, operados de casteo peligroso (as)
+    // pero si el objeto que recibimos es un Int u otra clase, dara una excepcion
+    val cadena:String = obj as String
+    println(cadena.length)
+}
 
+fun castSecure(obj:Any) {
+    val cadena:String? = obj as? String
+    println(cadena?.length)
 }
