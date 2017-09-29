@@ -1,23 +1,37 @@
 
 fun main(args:Array<String>) {
 
-    // array with multiples values of types
-    val arreglo:Array<Any> = arrayOf(1,2,3,4,5,6,7,8,9,10,"11","12","trece")
+    // nullables
+    // la variable pizza es nullable string
+    var pizza:String? = "Pizza"
 
-    val arregloDeInt:IntArray = intArrayOf(1, 2, 3)
+    // val rebanadas = pizza.length// esto me da error, ya que kotlin no esta seguro que cotiene algo la variable
 
-    val arregloDeNulos = arrayOfNulls<String>(12) // todos son nulls
-
-    // elemento es una variable de asignacion
-    for( elemento in arreglo ) {
-        print("$elemento - ")
+    // primera manera
+    if(pizza != null) {
+        val rebanadas = pizza.length
+        println("Tengo ${rebanadas} de ${pizza}")
+    } else {
+        println("No queda pizza")
     }
 
-    println("")
+    // segunda manera
+    // safe all operator, operador de llamada segura
+    val rebanadas2 = pizza?.length
+    // comment or uncomment the line of bellow
+    pizza = null
+    println("Tengo ${rebanadas2} de ${pizza}")
 
-    for( indice in arreglo.indices ) {
-        print(arreglo[indice])
-        print(" - ")
-    }
+    // tercera manera
+    // Operador !!
+    var pizzaHut:String? = "PizzaHut"
+    // uncomment or comment to get a nullPointerException
+    // pizzaHut = null
+    var rebanadasDePizza:Int? = pizzaHut!!.length
+
+    println("${pizzaHut} tiene ${rebanadasDePizza} rebanadas de pizza aun")
+
+
+
 
 }
